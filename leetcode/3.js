@@ -35,29 +35,27 @@
 //
 
 var lengthOfLongestSubstring = function (s) {
-    let length = 1;
-    if(s.length === 0){
-        return 0;
-    }
-    let substring = s[0];
-
-    for(let i = 1; i < s.length; i++){
-        let char = s[i];
-        substring = checkForInclusion(substring).concat(char);
-        if(substring.length > length){
-            length = substring.length;
+    const charIndex = {};
+    let length = 0;
+    let i = 0;
+    for(let j = 0; j < s.length; j++){
+        let char = s[j];
+        if(charIndex[char] === undefined){
+            charIndex[char] = j;
+        }else{
+            i = charIndex[char]+1;
+            charIndex[char] = j;
+            if(i !== j){
+            while(charIndex[s[i]] !== i ){
+                i++;
+            }
+            }
+        }
+        if(j - i + 1 > length){
+            length = j - i + 1;
         }
     }
     return length;
-};
-
-var checkForInclusion = function (s, c) {
-    const index = s.indexOf(c);
-    if(index === -1){
-        return s;
-    }else{
-        return s.slice(index + 1);
-    }
 };
 
 
