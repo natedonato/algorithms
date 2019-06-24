@@ -10,3 +10,9 @@
     a better solution uses a hash to keep track of seen chars and their index, using a moving i..j window
     i tried to implement better solution but had trouble updating window start point
     
+6/24
+    9. Palindrome Number (easy) https://leetcode.com/problems/palindrome-number
+    Solved as directed without converting to string by using a reverse digit helper function (building a reversed integer one number at a time).
+    had to math.floor a division because it was automatically making float instead of integer division. Took less than 10 minutes. 90% fast
+    O(n) time and space (must hit each digit of input and reverse)
+
