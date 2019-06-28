@@ -15,4 +15,8 @@
     Solved as directed without converting to string by using a reverse digit helper function (building a reversed integer one number at a time).
     had to math.floor a division because it was automatically making float instead of integer division. Took less than 10 minutes. 90% fast
     O(n) time and space (must hit each digit of input and reverse)
+6/28
+    14.  Longest Common Prefix (easy) https://leetcode.com/problems/longest-common-prefix/ 
+    Solved but forgot to account for input of empty array as edgecase, also had to use arr.every method which i haven't used before.
+    
 
