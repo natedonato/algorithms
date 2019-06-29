@@ -18,5 +18,10 @@
 6/28
     14.  Longest Common Prefix (easy) https://leetcode.com/problems/longest-common-prefix/ 
     Solved but forgot to account for input of empty array as edgecase, also had to use arr.every method which i haven't used before.
-    
+
+    20.  Valid Parenthesis (easy) https://leetcode.com/problems/valid-parentheses/
+    Solved very quickly using a stack
+
+    19. Remove Nth Node From End of List (medium) https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+    Solved using two pointers, missed edge case where Nth node is same length as list on first return
 
