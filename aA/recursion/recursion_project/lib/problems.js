@@ -114,6 +114,7 @@ function pow(base, exponent) {
 //     1-dimensional array: ['some data']
 //     2-dimensional array: [['some data']]
 //     3-dimensional array: [[['some data']]]
+
 function flatten(data) {
     if(data.every(el => !Array.isArray(el))){
         return data;
@@ -172,12 +173,15 @@ function flatten(data) {
 // fileFinder(desktop, 'sequoia.jpeg');             // => false
 function fileFinder(directories, targetFile) {
 
+    let returnValue = false;
     Object.keys(directories).forEach(key => {
-    
+        if(key === targetFile){returnValue = true;}
+        if(key[0] === "/"){
+            if(fileFinder(directories[key], targetFile)) { returnValue = true; }
+        }
+    });
 
-
-    })
-
+    return returnValue;
 }
 
 
@@ -191,6 +195,23 @@ function fileFinder(directories, targetFile) {
 // pathFinder(desktop, 'everlong.flac'));       // => '/music/genres/rock/everlong.flac'
 // pathFinder(desktop, 'honeybadger.png'));     // => null
 function pathFinder(directories, targetFile) {
+    let path = null;
+
+    
+    Object.keys(directories).forEach(el => {
+
+        if(el === targetFile){
+            path = "/"+targetFile;
+        }
+
+        if(el[0] === "/"){
+            let subQuery = pathFinder(directories[el], targetFile);
+            if(subQuery){path = el +subQuery;}
+        }
+
+    });
+
+    return path;
 
 }
 
