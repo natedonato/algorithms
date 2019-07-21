@@ -22,6 +22,10 @@
     20.  Valid Parenthesis (easy) https://leetcode.com/problems/valid-parentheses/
     Solved very quickly using a stack
 
+7/16
     19. Remove Nth Node From End of List (medium) https://leetcode.com/problems/remove-nth-node-from-end-of-list/
     Solved using two pointers, missed edge case where Nth node is same length as list on first return
 
+7/20
+    73. Set Matrix Zeroes (Medium)https://leetcode.com/problems/set-matrix-zeroes/
+    Solved quickly but initially assumed matrixes were square and couldn't understand why it kept failing.
