@@ -47,7 +47,9 @@ class Hashtable {
     }
 
     print(){
-        console.log(this.buckets)
+        console.log(this.buckets);
+        console.log("count: "+ this.count);
+        console.log("size " + this.size);
     }
 
     put(key, value){
