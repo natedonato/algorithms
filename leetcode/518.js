@@ -2,16 +2,41 @@
 
 
 var change = function (amount, coins, memo = {}) {
-    if(memo[amount]){return memo[amount];}
-    if(amount === 0){return 0;}
-
-    count = 0;
-    
-    coins.forEach(coin => {
-        if(coin <= amount){
-            count += 1 + change(amount - coin, coins, memo);
+/**
+ * @param {number} amount
+ * @param {number[]} coins
+ * @return {number}
+ */
+var change = function(amount, coins) {
+    let count = 0;
+    if(coins.length === 0 ){
+        if(amount > 0){
+            return 0;
+        }else{
+            return 1;
         }
-    });
+    };
+    if(coins.length === 1 && amount % coins === 0){return 1;}
+    if(coins.length === 1 && amount % coins != 0){return 0;}
+    let firstCoin = coins.pop();
+    
+    while(amount >= firstCoin){
+        // console.log("amount: ", amount);
+        // console.log("coins: ", coins);
+        // console.log("count: ", count);
+        count += change(amount, coins);   
+        amount -= firstCoin;
+    }
+    
+    // console.log("count: ", count);
+    // console.log("amount: ", amount);
+    if(amount === 0){count += 1}
+    
+    if(amount > 0){
+        count += change(amount, coins)
+    }
+    
 
     return count;
+}
 };
