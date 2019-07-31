@@ -1,17 +1,23 @@
-// You are given coins of different denominations and a total amount of money.Write a function to compute the number of combinations that make up that amount.You may assume that you have infinite number of each kind of coin.
+/**
+ * @param {number} amount
+ * @param {number[]} coins
+ * @return {number}
+ */
+var change = function (amount, coins) {
 
+    if (amount === 0) { 
+        return 1; 
+    }
+    let firstCoin = coins[0];
+    let count = 0;
 
-var change = function (amount, coins, memo = {}) {
-    if(memo[amount]){return memo[amount];}
-    if(amount === 0){return 0;}
+    for(let qty = 0; qty * firstCoin <= amount; qty++){
+        nextAmount = amount - qty * firstCoin;
+        count += change(nextAmount, coins.slice(1));
+    }
 
-    count = 0;
-    
-    coins.forEach(coin => {
-        if(coin <= amount){
-            count += 1 + change(amount - coin, coins, memo);
-        }
-    });
 
     return count;
 };
+
+change(5,[1,2,5]);
