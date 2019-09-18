@@ -29,3 +29,13 @@
 7/20
     73. Set Matrix Zeroes (Medium)https://leetcode.com/problems/set-matrix-zeroes/
     Solved quickly but initially assumed matrixes were square and couldn't understand why it kept failing.
+
+9/18 
+    129. Sum Root to Leaf Numbers
+    Initially missunderstood question and how digits were combined, solved using DFS while keeping track of paths and joining together like digit strings
+
+    112. Path Sum
+    Solved quickly after last question using dfs keeping track of running sum and returning true / false at leaf nodes.
+
+    988. Smallest String Starting From Leaf
+    Solved using DFS and some string magic (String.fromCharCode instead of making an integer to alphabet dictionary).  Also used Array.sort to sort lexographically and some string magic to build string.
