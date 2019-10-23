@@ -39,3 +39,12 @@
 
     988. Smallest String Starting From Leaf
     Solved using DFS and some string magic (String.fromCharCode instead of making an integer to alphabet dictionary).  Also used Array.sort to sort lexographically and some string magic to build string.
+    
+*did some but didn't log between previous entry and next entry* 
+   
+10/23 
+    111. Minimum Depth of Binary Tree
+    dfs, used best = Infinity as a baseline value for best then updated with any better, allowing early termination for any depths greater than my current best.
+    
+    113. Path Sum II
+    more dfs practice, kept track of path in array with push / pop for each dfs round.  Initially misread question and included non leaf paths that summed to target; also had to Duplicate my path array when pushing it into my collection of good paths because otherwise I would mutate my old good paths to all be the same :(
